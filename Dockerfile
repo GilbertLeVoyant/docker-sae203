@@ -1,10 +1,10 @@
 # Utiliser Debian comme image de base
 FROM debian:latest
 
-# Mettre à jour les paquets et installer Nginx
-RUN apt-get update && apt-get install -y nginx && apt-get clean
+# Mettre à jour les paquets et installer Apache (httpd)
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
 
-# Copier les fichiers HTML et CSS dans le répertoire par défaut de Nginx
+# Copier les fichiers HTML, CSS, vidéos et images dans le répertoire par défaut d'Apache
 COPY html /var/www/html
 COPY videos /var/www/html/videos
 COPY images /var/www/html/images
@@ -12,5 +12,5 @@ COPY images /var/www/html/images
 # Exposer le port 80
 EXPOSE 80
 
-# Commande pour démarrer Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Commande pour démarrer Apache
+CMD ["apachectl", "-D", "FOREGROUND"]
