@@ -1,0 +1,116 @@
+/* Styles généraux */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f9f9f9;
+	color: #333;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #222;
+	text-align: center;
+	margin: 20px 0;
+}
+
+/* En-tête */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 10px 20px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+header .logo {
+	display: flex;
+	align-items: center;
+}
+
+header .logo img {
+	height: 40px;
+	margin-right: 10px;
+}
+
+header .logo h1 {
+	margin: 0;
+	font-size: 1.5rem;
+	color: #222;
+}
+
+header nav .login-button {
+	background-color: #ff0000;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 1rem;
+	transition: background-color 0.3s ease;
+}
+
+header nav .login-button:hover {
+	background-color: #cc0000;
+}
+
+/* Conteneur principal */
+.video-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px;
+}
+
+/* Carte vidéo */
+.video-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	width: 300px;
+	/* Largeur fixe pour les cartes */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Vidéo */
+video {
+	width: 100%;
+	/* La vidéo occupe toute la largeur de la carte */
+	height: auto;
+	/* La hauteur s'adapte automatiquement */
+	aspect-ratio: 16 / 9;
+	/* Maintient un ratio 16:9 */
+	border-bottom: 1px solid #ddd;
+}
+
+/* Titre de la vidéo */
+.video-card h3 {
+	margin: 10px 0;
+	font-size: 1.2rem;
+	color: #444;
+	text-align: center;
+}
+
+/* Pied de page */
+footer {
+	background-color: #ffffff;
+	color: #666;
+	text-align: center;
+	padding: 10px 0;
+	margin-top: 20px;
+	font-size: 0.9rem;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
