@@ -34,111 +34,25 @@
 		<div class="videos">
 			<h2>Videos Being Watched</h2>
 			<div class="video-grid">
-				<!-- Vidéo 1 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video1.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Les 12 coups de midi</h3>
-						<span>Vues : 1,234</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 2 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video2.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>NORMAN - LUIGI clash MARIO</h3>
-						<span>Vues : 2,567</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 3 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video3.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Brr Brr Patapime</h3>
-						<span>Vues : 3,890</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 4 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video4.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Silly car</h3>
-						<span>Vues : 4,123</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 5 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video5.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Mael is calling</h3>
-						<span>Vues : 5,678</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 6 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video6.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Les as de la jungles</h3>
-						<span>Vues : 6,789</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 7 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video7.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Dalty cheat</h3>
-						<span>Vues : 7,890</span>
-					</div>
-				</div>
-
-				<!-- Vidéo 8 -->
-				<div class="video-item">
-					<video controls>
-						<source src="../src/videos/Video8.mp4" type="video/mp4">
-						Votre navigateur ne supporte pas la lecture vidéo.
-					</video>
-					<div class="video-info">
-						<h3>Lava Chicken</h3>
-						<span>Vues : 8,123</span>
-					</div>
-				</div>
-				<div class="add-video">
-					<h3>Ajouter une vidéo</h3>
-					<form id="addVideoForm">
-						<input type="text" id="title" placeholder="Titre de la vidéo" required>
-						<input type="text" id="filename" placeholder="Nom du fichier (ex: video.mp4)" required>
-						<button type="submit">Ajouter</button>
-					</form>
-				</div>
-
-
+				<?php
+			  $videosFile = '../../../src/videos.json';
+			  if (file_exists($videosFile)) {
+			      $videos = json_decode(file_get_contents($videosFile), true);
+			      foreach ($videos as $video) {
+			          echo '<div class="video-item">';
+			          echo '<video controls>';
+			          echo '<source src="../../../src/videos/' . htmlspecialchars($video['filename']) . '" type="video/mp4">';
+			          echo 'Votre navigateur ne supporte pas la lecture vidéo.';
+			          echo '</video>';
+			          echo '<div class="video-info">';
+			          echo '<h3>' . htmlspecialchars($video['title']) . '</h3>';
+			          echo '</div>';
+			          echo '</div>';
+			      }
+			  } else {
+			      echo '<p>Aucune vidéo disponible.</p>';
+			  }
+			  ?>
 			</div>
 		</div>
 
