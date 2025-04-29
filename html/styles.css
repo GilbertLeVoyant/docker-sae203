@@ -78,17 +78,10 @@ main {
 }
 
 /* Fixe une hauteur pour les conteneurs des vidéos */
-.video-item {
-	background-color: #000;
-	/* Fond noir pour les vidéos non chargées */
-	border-radius: 8px;
-	/* Coins arrondis */
-	overflow: hidden;
-	/* Coupe les parties excédentaires */
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	/* Ajoute une ombre légère */
-	transition: transform 0.3s ease;
-	/* Animation au survol */
+.video-info span {
+	font-size: 14px;
+	color: #777;
+	/* Couleur des vues et pourcentage */
 }
 
 .video-item:hover {
@@ -99,11 +92,12 @@ main {
 .video-item video {
 	width: 100%;
 	/* La vidéo occupe toute la largeur du conteneur */
-	height: auto;
-	/* La hauteur est ajustée automatiquement pour respecter les proportions */
-	display: block;
-	background-color: #000;
-	/* Fond noir pour les vidéos non chargées */
+	height: 100%;
+	/* La vidéo occupe toute la hauteur du conteneur */
+	object-fit: cover;
+	/* Remplit le conteneur en respectant le ratio */
+	border-radius: 8px;
+	/* Coins arrondis */
 }
 
 .video-info {
