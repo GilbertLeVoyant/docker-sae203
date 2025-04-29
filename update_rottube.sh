@@ -13,6 +13,6 @@ git pull
 docker build -t rottube .
 
 # Lancer un nouveau conteneur avec le nom "rottube" et exposer le port 54688
-docker run -d -p 54688:80 --name rottube rottube
+docker run -d -p 54688:80 -p 3000:3000 -p 6379:6379 --name rottube rottube
 
 echo "Le conteneur 'rottube' a été mis à jour et relancé avec succès."
