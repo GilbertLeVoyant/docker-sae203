@@ -1,45 +1,69 @@
-Dockerfile
+# Dockerfile
+
+
 Exemple de dockerfile + github pour lancer un serveur web basé sur l'image httpd
 
 
-Instructions pour lancer l'application
+## Instructions pour lancer l'application
+
 Pour vérifier si docker est installé il faut faire la commande :
 
-docker --version
+*docker --version*
 
-    Cloner le référentiel :
 
-git clone git@github.com:juanluck/exempleDockerfile.git
+### Cloner le référentiel
 
-    Aller au référentiel :
+Pour cloner le référentiel on fait la commande :
 
-cd exempleDockerfile
+*git clone git@github.com:GilbertLeVoyant/docker-sae203.git*
 
-    Construisez l'image décrite dans dockerfile avec docker build :
 
-docker build -t <choisir-un-nom-pour-l'image> .
+### Aller au référentiel 
 
-    Lancer le serveur web :
+Pour se rendre dans le dossier *docker-sae203.git* on fait :
 
-docker run -d -p 8080:80 <nom-de-l'image-choisie>
+*cd docker-sae203.git*
 
-    Vérifier que l'application est en cours d'exécution. Pour ce faire, ouvrez un navigateur et tapez localhost:8080
 
-    Vérifier que le conteneur associé est actif :
+### Construire l'image
 
-docker ps
+Pour construire l'image décrite dans dockerfile on fait la commande :
 
-    La sortie de docker ps doit être similaire à :
+*docker build -t `Nom de l'image` .*
 
-CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES
-b8f8f406b03c   httpd-juanlu   "httpd-foreground"   30 minutes ago   Up 30 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   quirky_tesla
 
-    Finalement, arrêtez le conteneur avec la commande suivante (les dernières chiffres sont le code de hachage affiché par docker ps):
+### Lancement du serveur web
 
-docker stop b8f8f406b03c
+Pour lancer le serveur web il faut faire :
 
-    Encore, si on souhaite supprimer le conteneur, on peut taper :
+*docker run --name `Nom du conteneur` -d -p `Votre port`:80 `Nom de l'image`*
 
-docker rm b8f8f406b03c
+Pour vérifier que l'application est en cours d'execution, il faut ouvrir un navigateur et écrire :
 
-NOTE : Au lieu du code de hachage, on peut toujours taper le nom du conteneur. Dans le cas d'exemple ce nom est quirky_tesla
+*localhost:`Votre port`*
+
+### Vérification de l'activité du conteneur associer
+
+Pour vérifier son activité on fait la commande : 
+
+*docker ps*
+
+Cela devrait nous affichés une réponse ressemblant à cela :
+
+*CONTAINER ID   IMAGE          COMMAND              CREATED          STATUS          PORTS                                   NAMES*
+
+Avec en dessous des informations sur les autres conteneurs actifs.
+
+
+### Arrêter le conteneur
+
+Pour arrêter le conteneur il faut faire : 
+
+*docker stop `ID du conteneur ou Nom du conteneur`*
+
+
+### Supprimer le conteneur
+
+Pour supprimer le conteneur il faut faire :
+
+*docker rm `ID du conteneur ou Nom du conteneur`*
