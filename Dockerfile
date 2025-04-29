@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 COPY src/ /var/www/html/src
 COPY html/ /var/www/html/
 COPY styles /var/www/html/styles
+COPY php/    /var/www/html/php
+COPY data/ /var/www/html/data
 
 
 # Exposer le port 80

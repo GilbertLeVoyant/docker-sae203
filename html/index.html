@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RotHub</title>
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body>
@@ -19,108 +19,126 @@
 		<div class="auth-buttons">
 			<a href="login.html">Login</a>
 			<a href="signup.html">Sign Up</a>
+			<a href="#">Upload</a>
 		</div>
 	</header>
 
 	<nav>
 		<a href="index.html">Home</a>
-		<a href="#">Videos</a>
+		<a href="musiqueMP3/musique.html">Musique</a>
 		<a href="categories/indexCategorie.html">Categories</a>
 		<a href="photo&gif/photosGifs.html">Photos & GIFs</a>
 	</nav>
-	
+
 	<main>
 		<div class="videos">
 			<h2>Videos Being Watched</h2>
 			<div class="video-grid">
-
-				<div class="video-item" data-video-id="video1">
+				<!-- Vidéo 1 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video1.mp4" type="video/mp4">
+						<source src="../src/videos/Video1.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Les 12 coups de midi</h3>
-						<span class="view-count"></span>
+						<span>Vues : 1,234</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video2">
+				<!-- Vidéo 2 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video2.mp4" type="video/mp4">
+						<source src="../src/videos/Video2.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>NORMAN - LUIGI clash MARIO</h3>
-						<span class="view-count"></span>
+						<span>Vues : 2,567</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video3">
+				<!-- Vidéo 3 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video3.mp4" type="video/mp4">
+						<source src="../src/videos/Video3.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Brr Brr Patapime</h3>
-						<span class="view-count"></span>
+						<span>Vues : 3,890</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video4">
+				<!-- Vidéo 4 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video4.mp4" type="video/mp4">
+						<source src="../src/videos/Video4.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Silly car</h3>
-						<span class="view-count"></span>
+						<span>Vues : 4,123</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video5">
+				<!-- Vidéo 5 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video5.mp4" type="video/mp4">
+						<source src="../src/videos/Video5.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Mael is calling</h3>
-						<span class="view-count"></span>
+						<span>Vues : 5,678</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video6">
+				<!-- Vidéo 6 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video6.mp4" type="video/mp4">
+						<source src="../src/videos/Video6.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Les as de la jungles</h3>
-						<span class="view-count"></span>
+						<span>Vues : 6,789</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video7">
+				<!-- Vidéo 7 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video7.mp4" type="video/mp4">
+						<source src="../src/videos/Video7.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Dalty cheat</h3>
-						<span class="view-count"></span>
+						<span>Vues : 7,890</span>
 					</div>
 				</div>
 
-				<div class="video-item" data-video-id="video8">
+				<!-- Vidéo 8 -->
+				<div class="video-item">
 					<video controls>
-						<source src="/videos/Video8.mp4" type="video/mp4">
+						<source src="../src/videos/Video8.mp4" type="video/mp4">
 						Votre navigateur ne supporte pas la lecture vidéo.
 					</video>
 					<div class="video-info">
 						<h3>Lava Chicken</h3>
-						<span class="view-count"></span>
+						<span>Vues : 8,123</span>
 					</div>
 				</div>
+				<div class="add-video">
+					<h3>Ajouter une vidéo</h3>
+					<form id="addVideoForm">
+						<input type="text" id="title" placeholder="Titre de la vidéo" required>
+						<input type="text" id="filename" placeholder="Nom du fichier (ex: video.mp4)" required>
+						<button type="submit">Ajouter</button>
+					</form>
+				</div>
+
+
 			</div>
 		</div>
 
@@ -131,28 +149,9 @@
 	</main>
 
 	<footer>
-		<h3>&copy; RotHub 2025</h3>
+		<h3>&copy; RotHub 2025<h3>
 	</footer>
 
-	<script>
-		// Gère les compteurs de vues en localStorage
-		document.querySelectorAll('.video-item').forEach(videoItem => {
-			const videoId = videoItem.dataset.videoId;
-			const viewCountEl = videoItem.querySelector('.view-count');
-			let views = localStorage.getItem(`views-${videoId}`) || 0;
-			viewCountEl.textContent = `${views} vues`;
-
-			const video = videoItem.querySelector('video');
-
-			// Incrémentation lorsqu'on commence à lire la vidéo
-			video.addEventListener('play', () => {
-				let currentViews = parseInt(localStorage.getItem(`views-${videoId}`) || 0);
-				currentViews++;
-				localStorage.setItem(`views-${videoId}`, currentViews);
-				viewCountEl.textContent = `${currentViews} vues`;
-			});
-		});
-	</script>
-
 </body>
+
 </html>
