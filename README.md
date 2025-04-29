@@ -1,4 +1,4 @@
-#SAE 2.03 Equipe 1
+# SAE 2.03 Equipe 1
 ## Présentation 
 Lors de cette SAE, nous avons appris les bases fondamentales de **Docker** qui nous permet d'héberger notre application. Nous avons choisis de créer un site web s'inspirant de Youtube qui permet de visionner des vidéos qui se nomme **RotHub** (qu'on appellera rottube dans les commandes)  
 
