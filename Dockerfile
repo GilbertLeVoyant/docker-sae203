@@ -37,4 +37,4 @@ COPY images /var/www/html/images
 EXPOSE 80 3000 6379
 
 # Script de démarrage pour gérer Apache, Redis et Node.js
-CMD ["sh", "-c", "service apache2 start && service redis-server start && node server.js"]
+CMD ["sh", "-c", "service apache2 start && service redis-server start && sleep 5 && node server.js"]
