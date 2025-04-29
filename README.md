@@ -4,10 +4,14 @@
 Lors de cette SAE, nous avons appris les bases fondamentales de **Docker** qui nous permet d'héberger notre application. Nous avons choisis de créer un site web s'inspirant de Youtube qui permet de visionner des vidéos qui se nomme **RotHub** (qu'on appellera rottube dans les commandes)  
 
 ## Répartition des tâches dans le groupe
-Liam **GIRARD--FOURNEAUX** : Gestion du README.md  + HTML / CSS
-Axel  **LETELLIER** :  HTML / CSS + Gestion du README.md 
-Alex **HAZET** : HTML / CSS + Dockerfile + Test de nouvelles fonctionnalités 
-Emilien **FOYER** : Dockerfile + HTML / CSS + gestion du repository 
+
+
+ - Liam **GIRARD--FOURNEAUX** : Gestion du README.md  + HTML / CSS
+ - Axel  **LETELLIER** :  HTML / CSS + Gestion du README.md
+ - Alex **HAZET** : HTML / CSS + Dockerfile + Test de nouvelles
+   fonctionnalités
+ - Emilien **FOYER** : Dockerfile + HTML / CSS + gestion du repository
+
 
 ## Dockerfile
 
