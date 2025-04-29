@@ -19,22 +19,22 @@ RUN a2enmod rewrite
 # Définir le répertoire de travail pour Node.js
 WORKDIR /app
 
-# Copier les fichiers HTML, CSS, vidéos et images dans le répertoire par défaut d'Apache
-COPY html /var/www/html
-COPY videos /var/www/html/videos
-COPY images /var/www/html/images
-COPY package*.json ./
+# Copier uniquement les fichiers nécessaires pour installer les dépendances Node.js
+COPY backend/package*.json ./
 
 # Installer les dépendances Node.js
 RUN npm install
 
-# Copier le backend Node.js
+# Copier le reste des fichiers du backend
 COPY backend /app
+
+# Copier les fichiers HTML, CSS, vidéos et images dans le répertoire par défaut d'Apache
+COPY html /var/www/html
+COPY videos /var/www/html/videos
+COPY images /var/www/html/images
 
 # Exposer les ports nécessaires
 EXPOSE 80 3000 6379
 
 # Script de démarrage pour gérer Apache, Redis et Node.js
-CMD service apache2 start && \
-	service redis-server start && \
-	node server.js
+CMD ["sh", "-c", "service apache2 start && service redis-server start && node server.js"]
