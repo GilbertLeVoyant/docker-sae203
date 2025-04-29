@@ -1,21 +1,21 @@
 # Utiliser Debian comme image de base
 FROM debian:latest
 
-# Mettre à jour les paquets et installer Apache
+# Installer Apache et PHP
 RUN apt-get update && apt-get install -y \
 	apache2 \
-	&& apt-get clean 
+	php \
+	libapache2-mod-php \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
+
+# Copier les fichiers dans le répertoire par défaut d'Apache
+COPY src/ /var/www/html/src
+COPY html/ /var/www/html/
+COPY styles /var/www/html/styles
 
 
-
-# Copier tout le contenu du dossier src dans le répertoire par défaut d'Apache
-COPY html/     /var/www/html
-COPY styles/   /var/www/html/styles
-COPY src/     /var/www/html/src
-
-
-
-# Exposer le port 80 pour Apache
+# Exposer le port 80
 EXPOSE 80
 
 # Script de démarrage pour Apache
