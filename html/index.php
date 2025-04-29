@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RotHub</title>
+	<link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+
+	<header>
+		<a href="index.html" class="logo">Rot<span>Hub</span></a>
+		<div class="search-bar">
+			<input type="text" placeholder="Search...">
+			<button>🔍</button>
+		</div>
+		<div class="auth-buttons">
+			<a href="login.html">Login</a>
+			<a href="signup.html">Sign Up</a>
+			<a href="#">Upload</a>
+		</div>
+	</header>
+
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="musiqueMP3/musique.html">Musique</a>
+		<a href="categories/indexCategorie.html">Categories</a>
+		<a href="photo&gif/photosGifs.html">Photos & GIFs</a>
+	</nav>
+
+	<main>
+		<div class="videos">
+			<h2>Videos Being Watched</h2>
+			<div class="video-grid">
+				<?php
+			  $videosFile = '../../../data/videos.json';
+			  if (file_exists($videosFile)) {
+			      $videos = json_decode(file_get_contents($videosFile), true);
+			      foreach ($videos as $video) {
+			          echo '<div class="video-item">';
+			          echo '<video controls>';
+					  echo '<source src="../src/videos/' . htmlspecialchars($video['filename']) . '" type="video/mp4">';
+			          echo 'Votre navigateur ne supporte pas la lecture vidéo.';
+			          echo '</video>';
+			          echo '<div class="video-info">';
+			          echo '<h3>' . htmlspecialchars($video['title']) . '</h3>';
+			          echo '</div>';
+			          echo '</div>';
+			      }
+			  } else {
+			      echo '<p>Aucune vidéo disponible.</p>';
+			  }
+			  ?>
+			</div>
+		</div>
+
+		<div class="advertisement">
+			<p>Advertisement</p>
+			<div class="ad-placeholder"></div>
+		</div>
+	</main>
+
+	<footer>
+		<h3>&copy; RotHub 2025<h3>
+	</footer>
+
+</body>
+
+</html>
