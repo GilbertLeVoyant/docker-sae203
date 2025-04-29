@@ -3,7 +3,10 @@
 
 ## Projet vidéo à la demande
 
--
+- Docker
+- Javascipt
+- Html
+- Css
 
 ## Membres de l'équipe
 
@@ -13,7 +16,7 @@
 - A2 - LETELLIER Axel
 
 ## Liens vers le site web du projet
-[docker-sae203](https://brainrot.fandom.com/wiki/Category:Italian_Brainrot)
+[docker-sae203](https://di-docker:54688/)
 ## Liens vers le dépôt du projet
 
 [docker-sae203](`https://github.com/GilbertLeVoyant/docker-sae203`)
