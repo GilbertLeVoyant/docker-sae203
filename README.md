@@ -18,6 +18,4 @@
 [docker-sae203](http://di-docker:54688/)
 ## Liens vers le dépôt du projet
 
-[docker-sae203](`https://github.com/GilbertLeVoyant/docker-sae203`)
-
-.
+[docker-sae203](https://github.com/GilbertLeVoyant/docker-sae203)
