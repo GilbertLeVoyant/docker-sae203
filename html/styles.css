@@ -89,10 +89,17 @@ main {
 	transform: scale(1.05);
 }
 
+/* Style pour les vidéos */
 .video-item video {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
+	object-fit: cover;
+	/* Remplit le conteneur en coupant les parties excédentaires */
+	border-radius: 8px;
+	/* Garde les coins arrondis */
+	background-color: #000;
+	/* Ajoute un fond noir pour les vidéos non chargées */
 }
 
 .video-info {
