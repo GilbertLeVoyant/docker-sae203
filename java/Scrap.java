@@ -10,7 +10,7 @@ public class Scrap
 		try
 		{
 			// URL of the login page
-			String url = "http://di-docker:54688/";
+			String url = "http://di-docker:54688/signup.html";
 			Document doc = Jsoup.connect(url).get();
 
 			// Print the title of the page
