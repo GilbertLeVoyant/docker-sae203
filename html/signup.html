@@ -34,10 +34,27 @@
 				<input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
 					required>
 			</div>
-			<button type="submit" class="btn">Sign Up</button>
+			<button type="submit" class="btn" onclick="retrieveData">Sign Up</button>
 			<p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
 		</form>
 	</main>
+	<script >
+		function retrieveData()
+		{
+			let userName = document.querySelector("#username").value;
+			let email = document.querySelector("#email").value;
+			let password = document.querySelector("#password").value;
+			let confirmPassword = document.querySelector("#confirm-password").value;
+			let data = {
+				"username": userName,
+				"email": email,
+				"password": password,
+				"confirmPassword": confirmPassword
+			}
+
+			message.innerHTML = "Welcome " + userName + " to RotHub";
+		}
+	</script>
 
 </body>
 
