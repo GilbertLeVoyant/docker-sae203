@@ -50,7 +50,7 @@ Pour lancer le serveur web il faut faire :
 
 *Pour vérifier que l'application est en cours d'execution, il faut ouvrir un navigateur et écrire :*
 
-`localhost: [Votre port]`
+`di-docker:54688`
 
 * Vérification de l'activité du conteneur associer*
 
