@@ -241,24 +241,42 @@
 	</footer>
 
 	<script>
-		// Gère les compteurs de vues en localStorage
-		document.querySelectorAll('.video-item').forEach(videoItem => {
-			const videoId = videoItem.dataset.videoId;
-			const viewCountEl = videoItem.querySelector('.view-count');
-			let views = localStorage.getItem(`views-${videoId}`) || 0;
-			viewCountEl.textContent = `${views} vues`;
+		async function incrementView(videoId) {
+			try {
+				// Incrémenter les vues
+				await fetch(`http://localhost:3000/video/${videoId}/view`, { method: 'POST' });
 
-			const video = videoItem.querySelector('video');
+				// Récupérer les vues mises à jour
+				updateViews(videoId);
+			} catch (error) {
+				console.error('Erreur lors de la mise à jour des vues :', error);
+			}
+		}
 
-			// Incrémentation lorsqu'on commence à lire la vidéo
-			video.addEventListener('play', () => {
-				let currentViews = parseInt(localStorage.getItem(`views-${videoId}`) || 0);
-				currentViews++;
-				localStorage.setItem(`views-${videoId}`, currentViews);
-				viewCountEl.textContent = `${currentViews} vues`;
-			});
-		});
+		async function updateViews(videoId) {
+			try {
+				// Récupérer les vues depuis le backend
+				const response = await fetch(`http://localhost:3000/video/${videoId}/views`);
+				const data = await response.json();
+
+				// Mettre à jour l'affichage des vues
+				document.getElementById(`views-${videoId}`).textContent = data.views;
+			} catch (error) {
+				console.error('Erreur lors de la récupération des vues :', error);
+			}
+		}
+
+		// Initialiser les vues pour toutes les vidéos
+		async function initializeViews() {
+			const videoIds = ['1', '2']; // Ajoutez les IDs de toutes vos vidéos ici
+			for (const videoId of videoIds) {
+				await updateViews(videoId);
+			}
+		}
+
+		// Charger les vues au démarrage
+		initializeViews();
 	</script>
-
-</body>
-</html>
+	</body>
+	
+	</html>

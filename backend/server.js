@@ -1,8 +1,12 @@
 const express = require('express');
 const redis = require('redis');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
+// Activer CORS pour permettre les requêtes depuis le frontend
+app.use(cors());
 
 // Connexion à Redis
 const client = redis.createClient();
@@ -32,5 +36,5 @@ app.get('/video/:id/views', (req, res) => {
 });
 
 app.listen(port, () => {
-	console.log(`Serveur en cours d'exécution sur http://di-docker:${port}`);
+	console.log(`Serveur en cours d'exécution sur http://localhost:${port}`);
 });
