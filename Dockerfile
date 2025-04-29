@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
 
 
 # Copier tout le contenu du dossier src dans le répertoire par défaut d'Apache
-COPY src/ /var/www/html/
+COPY html/ /var/www/html
+COPY src/ /var/www/html/src
+
 
 
 # Exposer le port 80 pour Apache
