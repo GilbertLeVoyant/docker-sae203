@@ -42,6 +42,7 @@
 
 	<script>
 		function retrieveData() {
+			event.preventDefault(); 
 			let userName = document.querySelector("#username").value;
 			let email = document.querySelector("#email").value;
 			let password = document.querySelector("#password").value;
