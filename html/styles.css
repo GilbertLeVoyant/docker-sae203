@@ -98,9 +98,14 @@ main {
 }
 /* Style pour les vidéos */
 .video-item video {
-	width: 100%;
-	height: auto;
+	width: 360px;
+	/* Largeur fixe */
+	height: 270px;
+	/* Hauteur fixe */
 	object-fit: cover;
+	/* Maintient le ratio d'aspect */
+	margin: 0 auto;
+	/* Centre la vidéo dans son conteneur */
 }
 
 .video-info {
