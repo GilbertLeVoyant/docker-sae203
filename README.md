@@ -4,7 +4,6 @@
 ## Projet vidéo à la demande
 
 - Docker
-- Javascipt
 - Html
 - Css
 
