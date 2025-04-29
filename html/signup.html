@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sign Up - RotHub</title>
 	<link rel="stylesheet" href="styles.css">
+	
 </head>
 
 <body>
@@ -42,14 +43,16 @@
 
 	<script>
 		function retrieveData() {
+
 			event.preventDefault(); 
+
 			let userName = document.querySelector("#username").value;
 			let email = document.querySelector("#email").value;
 			let password = document.querySelector("#password").value;
 			let confirmPassword = document.querySelector("#confirm-password").value;
 			
 			if (password !== confirmPassword) {
-				alert("Passwords do not match!");
+				alert("Mot de passes différents!");
 				return false;
 			}
 
@@ -62,7 +65,7 @@
 
 			// Display the welcome message
 			let message = document.querySelector("#message");
-			message.innerHTML = "Welcome " + userName + " to RotHub";
+			message.innerHTML = "Bienvenue " + userName + " sur RotHub";
 		}
 	</script>
 
