@@ -1,31 +1,31 @@
-<?php
-// filepath: /home/etudiant/fe240547/TP/s2/s2.03_install_services_reseaux/docker-sae203/php/upload.php
+<!-- filepath: /home/etudiant/fe240547/TP/s2/s2.03_install_services_reseaux/docker-sae203/html/upload.php -->
+<!DOCTYPE html>
+<html lang="en">
 
-// Chemin vers le dossier où les vidéos seront stockées
-$uploadDir = '../../src/videos/';
-$videosFile = '../../src/videos.json';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de fichiers</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
 
-// Vérifiez si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = htmlspecialchars($_POST['title']);
-    $video = $_FILES['video'];
+<body>
+    <header>
+        <a href="index.php" class="logo">Rot<span>Hub</span></a>
+    </header>
 
-    // Vérifiez que le fichier est bien une vidéo MP4
-    if ($video['type'] !== 'video/mp4') {
-        die('Erreur : Seuls les fichiers MP4 sont autorisés.');
-    }
+    <main>
+        <h2>Uploader une vidéo ou une image</h2>
+        <form action="../php/upload_handler.php" method="POST" enctype="multipart/form-data">
+            <label for="title">Titre :</label>
+            <input type="text" id="title" name="title" placeholder="Titre du fichier" required>
 
-    // Déplacez le fichier téléchargé dans le dossier des vidéos
-    $targetFile = $uploadDir . basename($video['name']);
-    if (move_uploaded_file($video['tmp_name'], $targetFile)) {
-        // Ajoutez les informations de la vidéo dans le fichier JSON
-        $videos = file_exists($videosFile) ? json_decode(file_get_contents($videosFile), true) : [];
-        $videos[] = ['title' => $title, 'filename' => $video['name']];
-        file_put_contents($videosFile, json_encode($videos, JSON_PRETTY_PRINT));
+            <label for="file">Fichier :</label>
+            <input type="file" id="file" name="file" accept="video/mp4, image/*" required>
 
-        echo 'Vidéo importée avec succès.';
-    } else {
-        echo 'Erreur lors de l\'importation de la vidéo.';
-    }
-}
-?>
+            <button type="submit">Uploader</button>
+        </form>
+    </main>
+</body>
+
+</html>
