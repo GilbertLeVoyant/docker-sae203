@@ -11,11 +11,6 @@ COPY images  /var/www/html/images
 COPY package*.json ./
 COPY musique /var/www/html/musique
 
-# Installer les dépendances Node.js
-RUN npm install
-
-# Copier le backend Node.js
-COPY backend /app
 
 # Exposer les ports nécessaires
 EXPOSE 80 
