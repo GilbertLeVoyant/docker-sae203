@@ -37,7 +37,6 @@
 			<button type="submit" class="btn" onclick="retrieveData()">Sign Up</button>
 			<p class="auth-link">Already have an account? <a href="login.html">Login</a></p>
 		</form>
-		<!-- Add a placeholder for the message -->
 		<p id="message"></p>
 	</main>
 
@@ -47,8 +46,7 @@
 			let email = document.querySelector("#email").value;
 			let password = document.querySelector("#password").value;
 			let confirmPassword = document.querySelector("#confirm-password").value;
-
-			// Validate password and confirm password match
+			
 			if (password !== confirmPassword) {
 				alert("Passwords do not match!");
 				return false;
