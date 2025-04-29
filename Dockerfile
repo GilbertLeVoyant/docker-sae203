@@ -9,8 +9,9 @@ RUN apt-get update && apt-get install -y \
 
 
 # Copier tout le contenu du dossier src dans le répertoire par défaut d'Apache
-COPY html/ /var/www/html
-COPY src/ /var/www/html/src
+COPY html/     /var/www/html
+COPY styles/   /var/www/html
+COPY src/     /var/www/html/src
 
 
 
