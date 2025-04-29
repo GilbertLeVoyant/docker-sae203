@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y apache2 && apt-get clean
 COPY html /var/www/html
 COPY videos /var/www/html/videos
 COPY images /var/www/html/images
+COPY java var/www/java
 
 # Exposer le port 80
 EXPOSE 80
