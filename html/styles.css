@@ -72,17 +72,23 @@ main {
 .video-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	/* Responsive : adapte le nombre de colonnes */
 	gap: 20px;
 	margin-top: 20px;
 }
 
-/* Style pour chaque vidéo */
+/* Fixe une hauteur pour les conteneurs des vidéos */
 .video-item {
-	background-color: #fff;
+	background-color: #000;
+	/* Fond noir pour les vidéos non chargées */
 	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* Coins arrondis */
 	overflow: hidden;
+	/* Coupe les parties excédentaires */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* Ajoute une ombre légère */
 	transition: transform 0.3s ease;
+	/* Animation au survol */
 }
 
 .video-item:hover {
@@ -92,29 +98,36 @@ main {
 /* Style pour les vidéos */
 .video-item video {
 	width: 100%;
-	height: 100%;
+	/* La vidéo occupe toute la largeur du conteneur */
+	height: auto;
+	/* La hauteur est ajustée automatiquement pour respecter les proportions */
 	display: block;
-	object-fit: cover;
-	/* Remplit le conteneur en coupant les parties excédentaires */
-	border-radius: 8px;
-	/* Garde les coins arrondis */
 	background-color: #000;
-	/* Ajoute un fond noir pour les vidéos non chargées */
+	/* Fond noir pour les vidéos non chargées */
 }
 
 .video-info {
 	padding: 10px;
-	text-align: center;
+	text-align: left;
+	/* Aligne le texte à gauche */
+	background-color: #fff;
+	/* Fond blanc pour les informations */
+	color: #333;
+	/* Couleur du texte */
 }
 
 .video-info h3 {
 	font-size: 16px;
-	margin: 10px 0 5px;
+	margin: 5px 0;
+	/* Espacement autour du titre */
+	font-weight: bold;
+	color: #000;
+	/* Couleur du titre */
 }
-
 .video-info span {
 	font-size: 14px;
 	color: #777;
+	/* Couleur des vues et pourcentage */
 }
 
 /* Publicité */
