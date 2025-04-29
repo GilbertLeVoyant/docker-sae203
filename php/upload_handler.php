@@ -10,9 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $file = $_FILES['file'];
 
-    // Vérifiez que le fichier a été téléchargé sans erreur
+    // Vérifiez si une erreur s'est produite lors du téléchargement
     if ($file['error'] !== UPLOAD_ERR_OK) {
-        die('Erreur lors du téléchargement du fichier.');
+        echo 'Erreur lors du téléchargement du fichier. Code d\'erreur : ' . $file['error'];
+        exit;
     }
 
     // Vérifiez le type de fichier (vidéo MP4 ou image)
@@ -31,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uploads = file_exists($metadataFile) ? json_decode(file_get_contents($metadataFile), true) : [];
     $uploads[] = ['title' => $title, 'filename' => $file['name'], 'type' => $file['type']];
     file_put_contents($metadataFile, json_encode($uploads, JSON_PRETTY_PRINT));
+	   // Vérifiez la taille du fichier
+    if ($file['size'] > $maxFileSize) {
+        die('Erreur : Le fichier est trop lourd. La taille maximale autorisée est de 10 Mo.');
+    }
 
     echo 'Fichier uploadé avec succès.';
     echo '<br><a href="../html/index.php">Retour à l\'accueil</a>';
