@@ -1,7 +1,7 @@
 # Utiliser Debian comme image de base
 FROM debian:latest
 
-# Installer Apache et PHP
+# Installer Apache
 RUN apt-get update && apt-get install -y apache2 && apt-get clean
 
 # Copier les fichiers dans le répertoire par défaut d'Apache
